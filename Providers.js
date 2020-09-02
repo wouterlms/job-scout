@@ -65,9 +65,26 @@ const creativeSkills = new Provider(
     },
 );
 
+const jobat = new Provider(
+	"jobat",
+	"https://www.jobat.be/nl/jobs/search/[KEYWORD]?l=[LOCATION]&kmfrom=[RADIUS]&fromzipcode=[ZIPCODE]",
+	{
+		settings,
+		elements: {
+			job: ".jobCard",
+            title: ".jobCard-title>a",
+            company: ".jobCard-company>a",
+            location: ".jobCard-location",
+            salary: "",
+            link: ".jobCard-title>a",
+		}
+	}
+)
+
 module.exports = {
     indeed,
     jooble,
     glassdoor,
-    creativeSkills,
+	creativeSkills,
+	jobat,
 };

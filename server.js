@@ -17,6 +17,7 @@ jobFinder
     .addProvider(Providers.indeed)
     .addProvider(Providers.jooble)
     .addProvider(Providers.glassdoor)
-    .addProvider(Providers.creativeSkills);
+	.addProvider(Providers.creativeSkills)
+	.addProvider(Providers.jobat);
 
 jobFinder.findJobs();

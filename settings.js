@@ -1,5 +1,6 @@
 const settings = {
-    location: "Dilsen-Stokkem",
+	location: "Dilsen-Stokkem",
+	zipcode: 3650,
     radius: 50,
     keywords: [
         "junior web developer",

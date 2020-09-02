@@ -12,7 +12,7 @@ module.exports = class Provider {
         this.#params = params;
 
         this.createUrl();
-    }
+	}
 
     createUrl() {
         Object.keys(this.#params.settings).forEach(setting => {
@@ -33,7 +33,7 @@ module.exports = class Provider {
             this.#params.settings.keywords.forEach(async keyword => {
                 const url = this.#templateUrl.replace(
                     "[KEYWORD]",
-                    keyword.replace(/ /g, "+"),
+                    keyword.replace(/ /g, "-"),
                 );
                 const $ = await this.scrape(url);
 
@@ -53,7 +53,8 @@ module.exports = class Provider {
     }
 
     async scrape(url) {
-        const result = await axios.get(url);
+		// console.log(url);
+		const result = await axios.get(url);
         return cheerio.load(result.data);
     }
 
@@ -115,8 +116,7 @@ module.exports = class Provider {
                 link = `https://${baseUrl[2]}${link}`;
             }
 
-            const job = { title, company, location, salary, link };
-
+			const job = { title, company, location, salary, link };
             jobs.push(job);
         });
 
